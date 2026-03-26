@@ -1,0 +1,9 @@
+This is a mix of supervised + unsupervised learning.
+
+Data used:
+Small amount of labeled data
+Large amount of unlabeled data
+Example:
+Image recognition where only some images are labeled.
+
+📌 Used when: Labeling data is expensive or time-consuming.
