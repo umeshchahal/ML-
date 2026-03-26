@@ -1,0 +1,17 @@
+In reinforcement learning, an agent learns by interacting with an environment and receives rewards or penalties.
+
+Example:
+Self-driving cars
+Game playing (like chess or video games)
+
+
+Key components:
+Agent
+Environment
+Reward
+Action
+Algorithms:
+Q-Learning
+Deep Q Network (DQN)
+
+📌 Used when: Decisions must be made step-by-step to maximize reward.
