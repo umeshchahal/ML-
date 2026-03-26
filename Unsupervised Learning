@@ -1,0 +1,14 @@
+In unsupervised learning, the model learns from unlabeled data and finds hidden patterns.
+
+Example:
+Grouping customers based on buying behavior
+
+Common tasks:
+Clustering → Group similar data
+Association → Find relationships
+Algorithms:
+K-Means Clustering
+Hierarchical Clustering
+Apriori Algorithm
+
+📌 Used when: You don’t know the output labels.
