@@ -1,0 +1,129 @@
+EDA is done in three levels:
+
+1 Univariate → single column
+2 Bivariate → two columns
+3 Multivariate → full dataset
+
+Numerical → Numerical
+Categorical → Categorical
+Numerical ↔ Categorical
+
+1. First step: Identify column types
+
+num_cols = df.select_dtypes(include=['int64','float64']).columns
+cat_cols = df.select_dtypes(include=['object','category']).columns
+
+2 EDA for Numerical Columns
+
+(A) Distribution analysis
+
+Histogram
+df[num_cols].hist(figsize=(12,8))
+
+You learn:
+normal distribution
+skewness
+spread of data
+
+(b) Outlier detection
+
+Boxplot
+sns.boxplot(data=df[num_cols])
+
+This shows:
+extreme values
+quartiles
+
+(c) Relationship between numerical features
+
+Correlation heatmap
+sns.heatmap(df[num_cols].corr(), annot=True, cmap='coolwarm')
+
+This reveals:
+multicollinearity
+strong predictors
+median
+
+3. EDA for Categorical Columns
+
+(a) Frequency analysis
+
+Countplot
+for col in cat_cols:
+    sns.countplot(x=col, data=df)
+    plt.show()
+
+You learn:
+class imbalance
+dominant categories
+
+(b) Percentage distribution
+
+df['gender'].value_counts(normalize=True)
+Useful in classification problems to detect imbalance.
+
+4. Numerical vs Categorical (Most Important Part)
+
+(a) Boxplot grouped by category
+
+Example: salary by gender
+sns.boxplot(x='gender', y='salary', data=df)
+
+You learn:
+how numerical values change across categories
+group comparison
+
+
+(b) Violin plot (better than boxplot)
+
+sns.violinplot(x='gender', y='salary', data=df)
+Shows:
+full distribution for each category
+
+
+(c) Barplot with mean values
+
+sns.barplot(x='department', y='salary', data=df
+This shows:
+average value per category
+
+5. Categorical vs Categorical
+
+(a) Crosstab (table)
+
+pd.crosstab(df['gender'], df['department'])
+
+(b) Heatmap of crosstab
+
+sns.heatmap(pd.crosstab(df['gender'], df['department']), annot=True)
+
+This reveals:
+category relationships
+patterns like bias or imbalance
+
+6. Multivariate visualization (Full dataset)
+
+Pairplot with hue
+This works only when numerical + categorical target exists.
+
+sns.pairplot(df, hue='target')
+
+You learn:
+class separation
+interactions between many variables
+
+7. Missing values by type
+
+Numerical missing pattern
+sns.heatmap(df[num_cols].isnull())
+
+Categorical missing pattern
+sns.heatmap(df[cat_cols].isnull())
+
+8. Feature importance after encoding categorical columns
+
+Categorical columns must be encoded before model training:
+df_encoded = pd.get_dummies(df, drop_first=True)
+
+model.fit(X, y)
+plt.barh(X.columns, model.feature_importances_)
