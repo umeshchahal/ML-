@@ -1,0 +1,5 @@
+In supervised learning, the model learns from labeled data (input + correct output)
+
+Common tasks:
+Regression → Predict numerical values
+Classification → Predict categories
