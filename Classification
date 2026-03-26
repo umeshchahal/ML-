@@ -1,0 +1,59 @@
+Types of Classification Problems
+
+1 Binary Classification
+Only two classe
+
+Examples:
+0 / 1
+Yes / No
+Fraud / Not Fraud
+
+2 Multiclass Classification
+
+More than two classes, but only one correct class
+
+Example:
+Digit recognition → 0–9
+Sentiment → Positive / Neutral / Negative
+
+3 .Multilabel Classification
+
+One sample can have multiple labels
+
+Example:
+Image → beach + sunset + people
+
+Popular Classification Algorithms
+
+
+1 Logistic Regression
+
+Use when:
+Linear relationship
+Baseline model
+Formula idea:
+Probability output → sigmoid function
+
+Key Hyperparameters
+penalty = 'l1', 'l2'
+C = regularization strength
+solver = 'liblinear', 'lbfgs'
+
+from sklearn.linear_model import LogisticRegression
+model = LogisticRegression(C=1.0, penalty='l2')
+model.fit(X_train, y_train)
+
+2 Decision Tree
+
+Use when:
+Data is non-linear
+Need interpretability
+
+Key Hyperparameters
+max_depth
+min_samples_split
+min_samples_leaf
+criterion = 'gini' or 'entropy'
+
+from sklearn.tree import DecisionTreeClassifier
+model = DecisionTreeClassifier(max_depth=5)
