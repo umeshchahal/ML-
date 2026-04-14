@@ -1,0 +1,38 @@
+1 Normal Distribution (Gaussian)
+. shape bell_shaped , symmetric 
+. mean=median=mode
+
+2 Positively Skewed(right skewed)
+. Tail goes to the right 
+. Mean > Median 
+
+most data on left 
+long tail on right 
+
+3 Negatively Skewed (left skewed)
+. Tail goes to the left 
+. mean < Median 
+
+4 Uniform Distribution 
+. Shape : Flat 
+. All value equally likely
+
+5 Bimodal distribution 
+. two peak 
+two humps in graph
+indicates 2 group in data 
+
+6 Multimodel Distribution 
+. more than 2 peaks 
+
+. multi humps 
+
+7 Exponential Distribution 
+. Sharp peak + long tain (usually right )
+. starts high -> gradually decrease 
+
+8 Long-Normal Diastribution 
+. look like right skewed but smoother
+
+. data cannot be negetive 
+. right tail 
